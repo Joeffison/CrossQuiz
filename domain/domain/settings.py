@@ -39,6 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+PROJECT_APPS = (
+    'quiz',
+)
+
+INSTALLED_APPS += PROJECT_APPS
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
