@@ -1,3 +1,5 @@
+ANSWER = 'answer'
+ANSWER_IS_CORRECT = 'is_correct'
 NAME = 'name'
 QUESTION = 'question'
 QUIZ_QUESTIONS = 'questions'
