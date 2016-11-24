@@ -1,0 +1,50 @@
+<div layout="column" ng-controller="HomeController as homeCtrl">
+
+  <article class="article">
+
+    <div>
+      <div class="login-page">
+
+        <div class="menu-header">
+          <a ng-click="homeCtrl.login()">Login</a>&nbsp;
+          <a ng-click="homeCtrl.register()">Register</a>
+        </div>
+
+
+        <div class="login-area">
+          <div class="login-input">
+            <div class="align-input-padding">
+              <input id="inputEmail" name="inputEmail"
+                     type="text"
+                     placeholder="Email"
+                     ng-model="homeCtrl.email"
+                     required />
+            </div>
+
+            <div class="align-input-padding">
+              <input id="inputPassword" name="inputPassword"
+                     type="text"
+                     placeholder="Password"
+                     ng-model="homeCtrl.password"
+                     required />
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn login-color login-button" ng-click="homeCtrl.onLoginAction()">
+            {{homeCtrl.loginAction}}
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer">
+
+      <div class="footer-copyright">
+        <div class="content">
+          Joeffison Silverio de Andrade © 2016 - v. {{homeCtrl.versionNumber}}
+          <a class="grey-text text-lighten-4 right" href="http://www2.lsd.ufcg.edu.br/~joeffison/professional/">Deutschland</a>
+        </div>
+      </div>
+
+    </footer>
+  </article>
+
+</div>

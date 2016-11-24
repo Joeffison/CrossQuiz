@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+article {
+  margin-top: 20px;
+}
+
+p, span {
+  color: black;
+}
+
+a {
+  cursor:pointer;
+  color: navy;
+}
+
+.footer-copyright {
+  padding-left: 15%;
+}
+
+footer {
+  width: 100%;
+}
+
+footer.page-footer {
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  background: #050462;
+  z-index: 99;
+  padding-right: 120px;
+}
+
+input {
+  order: 2;
+  margin-top: 0px;
+  background: transparent none repeat scroll 0% 0%;
+  padding: 2px 2px 1px;
+  border-width: 0px 0px 1px;
+  line-height: 26px;
+  border-radius: 0px;
+  border-style: solid;
+  width: auto;
+}
+
+.align-input-padding {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-page {
+  width: 100%;
+}
+
+.login-area {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+
+  width: 400px;
+  height: 200px;
+  background-color: #ededed;
+}
+
+.login-area input {
+  display: block;
+  margin : 0 auto;
+  max-width: 300px;
+  background-color: white !important;
+}
+
+.login-input {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.login-color {
+  color: white;
+  background-color: #9b58b3;
+}
+
+.login-color:hover {
+  font-weight: bold;
+  color: white;
+  background-color: #bf5fd8;
+}
+
+.login-button {
+  display: block;
+  margin : 0 auto;
+  width: 250px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding-left: 7px;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  padding-left: 10px;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  padding-left: 10px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  padding-left: 10px;
+}
+
+.menu-header {
+  width: 100px;
+  display: block;
+  margin : 0 auto;
+}
+
+.btn {
+  text-transform: none;
+}
