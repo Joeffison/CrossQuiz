@@ -71,7 +71,7 @@ class QuestionManager(models.Manager):
 
 
 class Question(models.Model):
-    question = models.CharField(max_length=254, null=False, blank=False)
+    question = models.CharField(max_length=508, null=False, blank=False)
     quiz = models.ForeignKey(Quiz, related_name=Field.QUIZ_QUESTIONS, null=False, blank=False)
 
     audit_log = AuditLog()
