@@ -6,7 +6,7 @@
     .controller('LoginController', LoginController);
 
   /* @ngInject */
-  function LoginController($state, $window, $cookies, urlUtil, quizService) {
+  function LoginController($state, $window, $cookies, $stateParams, urlUtil, quizService, authService) {
     var loginCtrl = this;
     loginCtrl.user = $window.localStorage.userName;
     loginCtrl.versionNumber = urlUtil.VERSION_NUMBER;
@@ -21,6 +21,8 @@
     loginCtrl.email = '';
     loginCtrl.password = '';
     loginCtrl.onLoginAction = onLoginAction;
+
+    loginCtrl.loginAction = loginActions[$stateParams.action];
 
     function openMenu($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
@@ -38,7 +40,7 @@
     }
 
     function login() {
-      loginCtrl.loginAction = loginActions.LOGIN;
+      loginCtrl.loginAction = loginActions[$stateParams.action];
     }
 
     function register() {
@@ -46,6 +48,7 @@
     }
 
     function onLoginAction() {
+      authService.login(loginCtrl.email, loginCtrl.password);
       quizService.list().then(success);
 
       function success(data) {

@@ -18,6 +18,9 @@
         data: {
           requireLogin: false
         },
+        params: {
+          action: 'REGISTER'
+        },
         onEnter: verifyAuthed
 
       });

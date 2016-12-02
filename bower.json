@@ -20,6 +20,7 @@
   "resolutions": {
     "jquery": "~2.2.3",
     "angular": "1.5.9",
-    "angular-resource": "~1.5.8"
+    "angular-resource": "~1.5.8",
+    "angular-materialize": "^0.1.8"
   }
 }

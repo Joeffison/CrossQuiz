@@ -9,12 +9,14 @@
   function QuizTakeController(quizPrepService) {
     var quizTakeCtrl = this;
     quizTakeCtrl.quiz = quizPrepService;
-    quizTakeCtrl.question = {number: 1, question: quizTakeCtrl.quiz.questions[5]};
+    quizTakeCtrl.question = {number: 1, question: quizTakeCtrl.quiz.questions[0], answerSelected: 0};
+    quizTakeCtrl.onAnswer = onAnswer;
 
     function onAnswer() {
-    }
-
-    function onNextQuestion() {
+      if(quizTakeCtrl.quiz.questions.length !== quizTakeCtrl.question.number) {
+        quizTakeCtrl.question.question = quizTakeCtrl.quiz.questions[quizTakeCtrl.question.number++];
+        quizTakeCtrl.question.answerSelected = 0;
+      }
     }
   }
 })();
