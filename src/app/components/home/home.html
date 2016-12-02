@@ -1,40 +1,12 @@
-<div layout="column" ng-controller="HomeController as homeCtrl">
+<div ng-cloak class="background-default" layout="column">
 
   <article class="article">
+    <div ng-if="!homeCtrl.isStateHome()" ui-view="toolbar"></div>
 
-    <div>
-      <div class="login-page">
+    <section ng-class="[homeCtrl.getClassResizer()] ">
+      <div ui-view></div>
+    </section>
 
-        <div class="menu-header">
-          <a ng-click="homeCtrl.login()">Login</a>&nbsp;
-          <a ng-click="homeCtrl.register()">Register</a>
-        </div>
-
-
-        <div class="login-area">
-          <div class="login-input">
-            <div class="align-input-padding">
-              <input id="inputEmail" name="inputEmail"
-                     type="text"
-                     placeholder="Email"
-                     ng-model="homeCtrl.email"
-                     required />
-            </div>
-
-            <div class="align-input-padding">
-              <input id="inputPassword" name="inputPassword"
-                     type="text"
-                     placeholder="Password"
-                     ng-model="homeCtrl.password"
-                     required />
-            </div>
-          </div>
-          <a class="waves-effect waves-light btn login-color login-button" ng-click="homeCtrl.onLoginAction()">
-            {{homeCtrl.loginAction}}
-          </a>
-        </div>
-      </div>
-    </div>
     <footer class="page-footer">
 
       <div class="footer-copyright">

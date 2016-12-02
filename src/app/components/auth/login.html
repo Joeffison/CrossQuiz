@@ -1,0 +1,40 @@
+<div layout="column">
+
+  <article class="article">
+
+    <div>
+      <div class="login-page">
+
+        <div class="menu-header">
+          <a ng-click="loginCtrl.login()">Login</a>&nbsp;
+          <a ng-click="loginCtrl.register()">Register</a>
+        </div>
+
+
+        <div class="login-area">
+          <div class="login-input">
+            <div class="align-input-padding">
+              <input id="inputEmail" name="inputEmail"
+                     type="text"
+                     placeholder="Email"
+                     ng-model="loginCtrl.email"
+                     required />
+            </div>
+
+            <div class="align-input-padding">
+              <input id="inputPassword" name="inputPassword"
+                     type="text"
+                     placeholder="Password"
+                     ng-model="loginCtrl.password"
+                     required />
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn login-color login-button" ng-click="loginCtrl.onLoginAction()">
+            {{loginCtrl.loginAction}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>

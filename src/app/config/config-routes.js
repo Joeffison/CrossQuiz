@@ -7,13 +7,14 @@
 
   /* @ngInject */
   function config($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    //$urlRouterProvider.otherwise('/home');
 
     $stateProvider
-      .state('login', {
+      .state('home.login', {
         url: '/login',
-        templateUrl: 'app/components/home/home.html',
-        controller: 'HomeController',
+        templateUrl: 'app/components/auth/login.html',
+        controller: 'LoginController',
+        controllerAs: 'loginCtrl',
         data: {
           requireLogin: false
         },
@@ -23,9 +24,9 @@
   }
 
   /* @ngInject */
-  function verifyAuthed($state, authService) {
-    if (authService.isAuthed()) {
-      $state.go('home');
-    }
+  function verifyAuthed($state) {
+    // if (authService.isAuthed()) {
+    //   $state.go('home');
+    // }
   }
 })();

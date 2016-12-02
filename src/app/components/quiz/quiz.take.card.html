@@ -1,0 +1,15 @@
+<div>
+  <div class="cq-take-quiz-question-title" style="white-space:pre-wrap;">
+    {{quizTakeCtrl.question.number}}. {{quizTakeCtrl.question.question.question}}
+  </div>
+
+  <div class="cq-take-quiz-question-card">
+    <ol type="a">
+      <li ng-repeat="answer in quizTakeCtrl.question.question.answers track by $index">
+        <div>
+          {{answer.answer}}
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>

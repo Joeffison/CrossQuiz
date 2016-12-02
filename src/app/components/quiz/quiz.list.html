@@ -1,0 +1,19 @@
+<div layout="row">
+
+  <div class="div-content-padding" class="content" layout-align="center center">
+    <div ng-if="quizListCtrl.list.length === 0" layout="column" layout-align="center center">
+      <div layout="row" class="div-there-nothing" align="center" layout-align="center center">
+        <i class="large material-icons">redeem</i>
+      </div>
+      <span class="there-nothing">I regret to inform you there is no quiz available.</span>
+    </div>
+
+    <div ng-if="quizListCtrl.list.length > 0">
+      <div layout="row" layout-wrap layout-align="start center">
+        <div flex="auto">
+          <div ng-include="'app/components/quiz/quiz.card.html'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
