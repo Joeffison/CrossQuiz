@@ -49,7 +49,7 @@
       quizService.list().then(success);
 
       function success(data) {
-        $state.go('home.quiz', {quizId: 3});
+        $state.go('home.quiz', {quizId: 1});
         loginCtrl.quizes = data;
         return loginCtrl.quizes;
       }

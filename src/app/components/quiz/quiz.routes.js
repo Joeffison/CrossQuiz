@@ -16,7 +16,7 @@
         },
         params: {
           urlFallback: '',
-          quizId: 3
+          quizId: 1
         },
         views: {
           '': {
