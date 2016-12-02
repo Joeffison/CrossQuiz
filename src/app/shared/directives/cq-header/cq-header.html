@@ -1,0 +1,11 @@
+<div class="menu-header">
+  <div ng-if="!cqHeaderCtrl.loggedIn()">
+    <a ng-click="cqHeaderCtrl.login()">Login</a>&nbsp;
+    <a ng-click="cqHeaderCtrl.register()">Register</a>
+  </div>
+
+  <div ng-if="cqHeaderCtrl.loggedIn()">
+    <div>Hi,&nbsp;{{cqHeaderCtrl.loggedIn()}}</div>&nbsp;
+    <a ng-click="">Logout</a>
+  </div>
+</div>

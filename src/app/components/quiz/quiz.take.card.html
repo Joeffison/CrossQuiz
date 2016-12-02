@@ -1,0 +1,23 @@
+<div>
+  <div ng-class="quizTakeCtrl.question.question.question.indexOf('\t') > 0? 'cq-code-center' : 'cq-text-center'"
+       class="cq-take-quiz-question">
+    {{quizTakeCtrl.question.number}}. {{quizTakeCtrl.question.question.question}}
+  </div>
+
+  <div class="cq-take-quiz-answer">
+    <ol type="A">
+      <div ng-repeat="answer in quizTakeCtrl.question.question.answers track by answer.id">
+        <input type="radio" name="answerSelected-{{answer.id}}" id="answerSelected-{{answer.id}}"
+               ng-model="quizTakeCtrl.question.answerSelected"
+               class="with-gap" ng-value="answer.id"/>
+        <label for="answerSelected-{{answer.id}}">
+          <li>{{answer.answer}}</li>
+        </label>
+      </div>
+    </ol>
+
+    <a class="waves-effect waves-light btn login-color login-button" ng-click="quizTakeCtrl.onAnswer()">
+      Continue
+    </a>
+  </div>
+</div>

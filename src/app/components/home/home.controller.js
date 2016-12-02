@@ -7,23 +7,15 @@
 
   /* @ngInject */
   function HomeController($state, $window, $cookies, urlUtil) {
-    console.log("it is HOME");
     var homeCtrl = this;
-    homeCtrl.user = $window.localStorage['userName'];
+    homeCtrl.user = $window.localStorage.userName;
     homeCtrl.versionNumber = urlUtil.VERSION_NUMBER;
     homeCtrl.currentTitle = currentTitle;
     homeCtrl.isStateHome = isStateHome;
     homeCtrl.menuActive = menuActive;
     homeCtrl.isDashboard = isDashboard;
     homeCtrl.openMenu = openMenu;
-
-    var loginActions = {'LOGIN': 'Login', 'REGISTER': 'Register'};
-    homeCtrl.loginAction = loginActions.REGISTER;
-    homeCtrl.login = login;
-    homeCtrl.register = register;
-    homeCtrl.email = '';
-    homeCtrl.password = '';
-    homeCtrl.onLoginAction = onLoginAction;
+    homeCtrl.getClassResizer = getClassResize;
 
     function openMenu($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
@@ -51,17 +43,10 @@
       return false;
     }
 
-    function login() {
-      homeCtrl.loginAction = loginActions.LOGIN;
+    function getClassResize() {
+      // return $mdMedia('(min-width: 1700px)') || !homeCtrl.sidenavOpen ? 'content-gt-md' : 'content-md';
+      return '';
     }
 
-    function register() {
-      homeCtrl.loginAction = loginActions.REGISTER;
-    }
-
-    function onLoginAction(){
-      console.log(homeCtrl.email);
-      console.log(homeCtrl.password);
-    }
   }
 })();

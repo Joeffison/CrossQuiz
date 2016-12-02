@@ -8,7 +8,7 @@
   function configRoutes($stateProvider) {
     $stateProvider
       .state('home', {
-        url: '/home',
+        url: '',
         data: {
           requireLogin: true,
           title: [{title: 'HOME_ID', sref: '#'}]

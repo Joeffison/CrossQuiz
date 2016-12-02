@@ -2,6 +2,8 @@
 
 article {
   margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 p, span {
@@ -25,7 +27,7 @@ footer.page-footer {
   padding: 0;
   position: fixed;
   bottom: 0;
-  background: #050462;
+  background: #9b58b3;
   z-index: 99;
   padding-right: 120px;
 }
@@ -42,9 +44,21 @@ input {
   width: auto;
 }
 
+input[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+  border-color: #9b58b3 !important;
+}
+
+input[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+  background-color: #9b58b3 !important;
+}
+
 .align-input-padding {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.cq-text-center {
+  text-align: center !important;
 }
 
 .login-page {
@@ -118,4 +132,19 @@ input {
 
 .btn {
   text-transform: none;
+}
+
+.cq-code-center {
+  white-space:pre-wrap !important;
+  display: block !important;
+  margin: auto !important;
+  width: 50% !important;
+}
+
+.cq-take-quiz-question {
+  margin-top: 100px !important;
+}
+
+.cq-take-quiz-answer {
+  background-color: #ededed;
 }

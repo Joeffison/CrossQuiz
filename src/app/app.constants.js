@@ -6,7 +6,7 @@
     .constant('urlUtil', urlUtil());
 
   function urlUtil() {
-    var URL = 'http://localhost:8000/crossquiz/';
+    var URL = 'http://localhost:8000/domain/';
 
     return {
       VERSION_NUMBER: 'CQ_1.0',

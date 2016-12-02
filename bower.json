@@ -4,10 +4,10 @@
   "dependencies": {
     "jquery": "~2.2.3",
     "angular": "^1.5.0",
-    "angular-ui-router": "1.0.0-beta.1",
+    "angular-ui-router": "0.2.18",
     "angular-materialize": "^0.1.8",
     "angular-ladda": "~0.3.1",
-    "angular-resource": "~1.4.0",
+    "angular-resource": "~1.5.8",
     "angular-sanitize": "1.4.12",
     "materialize": "0.97.7",
     "bootstrap": "3.3.4",
@@ -19,6 +19,8 @@
   },
   "resolutions": {
     "jquery": "~2.2.3",
-    "angular": "1.5.8"
+    "angular": "1.5.9",
+    "angular-resource": "~1.5.8",
+    "angular-materialize": "^0.1.8"
   }
 }

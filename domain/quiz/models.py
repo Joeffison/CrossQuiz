@@ -18,7 +18,7 @@ class QuizManager(models.Manager):
         questions_data = data.pop(Field.QUIZ_QUESTIONS)
 
         quiz = super(QuizManager, self).create(**data)
-        Answer.manager.create_categories(quiz, questions_data)
+        Question.manager.create_quiz_questions(quiz, questions_data)
         return quiz
 
     def validate_unique_name(self, quiz, **field):
@@ -43,14 +43,22 @@ class Quiz(models.Model):
 ################
 
 class QuestionManager(models.Manager):
-    @transaction.atomic
-    def create(self, data):
-        self.validate_unique_question(None, name=data[Field.QUESTION])
-        answer_data = data.pop(Field.QUIZ_ANSWERS)
+    # @transaction.atomic
+    # def create(self, quiz, data):
+    #     self.validate_unique_question(None, name=data[Field.QUESTION])
+    #     answer_data = data.pop(Field.QUIZ_ANSWERS)
+    #
+    #     question = super(QuestionManager, self).create(**data)
+    #     Answer.manager.create_quiz_answers(question, answer_data)
+    #     return question
 
-        question = super(QuestionManager, self).create(**data)
-        Answer.manager.create_quiz_answers(question, answer_data)
-        return question
+    @transaction.atomic
+    def create_quiz_questions(self, quiz, data):
+        for question in data:
+            answer_data = question.pop(Field.QUIZ_ANSWERS)
+
+            q = self.create(quiz=quiz, **question)
+            Answer.manager.create_quiz_answers(q, answer_data)
 
     def validate_unique_question(self, question, **field):
         try:
@@ -63,7 +71,7 @@ class QuestionManager(models.Manager):
 
 
 class Question(models.Model):
-    question = models.CharField(max_length=254, null=False, blank=False)
+    question = models.CharField(max_length=508, null=False, blank=False)
     quiz = models.ForeignKey(Quiz, related_name=Field.QUIZ_QUESTIONS, null=False, blank=False)
 
     audit_log = AuditLog()
